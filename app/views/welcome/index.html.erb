@@ -1,2 +1,8 @@
 <h1>Welcome to rebel mail</h1>
+<span>Upload HTML email template and send emails to following users:</span>
+<ul>
+<% @users.each do |user|%>
+<li><%= user.name + ': ' + user.email%></li>
+<% end %>
+</ul>
 <%= button_to "Send Emails", welcome_send_email_path, method: :get%>

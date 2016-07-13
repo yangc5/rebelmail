@@ -1,4 +1,8 @@
 class WelcomeController < ApplicationController
+  def index
+    @users = User.all
+  end
+
   def send_email
     @users = User.all
     @users.each do |user|
