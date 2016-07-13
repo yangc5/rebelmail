@@ -5,8 +5,9 @@ class WelcomeController < ApplicationController
 
   def send_email
     @users = User.all
+    @body = params['Message']
     @users.each do |user|
-      RebelMailer.rebel_email(user).deliver
+      RebelMailer.rebel_email(user, @body).deliver
     end
     redirect_to root_path
   end
